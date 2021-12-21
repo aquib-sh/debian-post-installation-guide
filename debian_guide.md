@@ -60,7 +60,7 @@ set si "Smart indent
 3) save the file and launch a new instance of terminal and do `su` to enter super user.
 
 
-## Add non-free and (backports to the sources list or upgrade to Debian testing)
+### Add non-free and (backports to the sources list or upgrade to Debian testing)
 NOTE: You don`t need to add backports if you are upgrading to Debian testing/sid
 
 1) Open sources list file using `vim /etc/apt/sources.list`
@@ -86,7 +86,7 @@ deb-src http://deb.debian.org/debian/ bullseye-backports main non-free
 4) run `apt update` to fetch the updates from sources.
 
 
-## Switch to Debian testing/sid 
+### Switch to Debian testing/sid 
 1) Replace the code_name (example: bullseye) with testing in /etc/apt/sources.list
    Your /etc/apt/sources.list should look like below:
 <pre>
@@ -104,7 +104,7 @@ deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free
 3) run `apt dist-upgrade` to upgrade your Debian to testing release.
 
 
-## Installing Nvida and other drivers and firmwares
+### Installing Nvida and other drivers and firmwares
 1) add nomodeset to grub to avoid conflicts.
    goto grub file using
    `vim /etc/default/grub`
@@ -121,6 +121,14 @@ deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free
 4) run `apt install firmware-realtek` to install realtek firmware for wifi, bluetooth, etc
 5) run `apt install printer-driver-all cups` to install printer drivers
 6) restart your system using `shutdown -r now`
+
+
+### Changing resolution
+Resolution can be changed through display settings in GNOME
+but after setting `nomodeset` the gdm login screen is of lower resolution
+to solve this we will copy the monitors.xml file to gdm configuration. <br/>
+`cp /home/<user>/.config/monitors.xml /var/lib/gdm3/.config/`
+<br>replace the <user> with your username.
 
 
 ## Pinkish display problem after upgrading to Debian Testing with Nvidia
