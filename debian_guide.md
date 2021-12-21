@@ -140,8 +140,6 @@ Standard Space - sRGB
 
 ## Important references:
 1) How to add fonts manually?
-<dd> 
-Copy the font files to /usr/share/fonts</br>
-run `fc-cache -f -v` to update fonts</br>
-run `fc-list` to verify your installed font
-</dd>
+- Copy the font files to /usr/share/fonts</br>
+- run `fc-cache -f -v` to update fonts</br>
+- run `fc-list` to verify your installed font
