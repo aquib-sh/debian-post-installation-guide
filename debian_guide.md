@@ -6,7 +6,8 @@ Author: Shaikh Aquib
 ### Installation of some must have packages
 1) There is no sudo privilege for user so enter super user using
 `su` command. It is recommended that you use `su` and enter the super user to do super user work instead of using sudo before every command that requires priviledge.
-2) `apt install git vim vim-gtk curl zip python3-pip default-jdk` <br/>to install git, VIM, curl, zip, pip, JDK
+2) `apt install git vim vim-gtk curl zip python3-pip default-jdk gimp obs-studio` <br/>
+to install Git, VIM, curl, zip, pip, JDK, GIMP, OBS-Studio
 
 
 ### Add .vimrc
@@ -49,7 +50,7 @@ set si "Smart indent
 
 ### Add user to sudo
 1) enter super user using `su` command.
-2) `usermod -aG sudo <user)` <br/> where replace the <user> with the user you want to add to sudo
+2) `usermod -aG sudo <user>` <br/> where replace the <user> with the user you want to add to sudo
    (example: `usermod -aG sudo aquib`)
 3) restart your computer for changes to take effect
 
@@ -132,7 +133,7 @@ to solve this we will copy the monitors.xml file to gdm configuration. <br/>
 
 
 ### Force GNOME to alt + tab only in current workspace
-`gsettings set org.gnome.shell.app-switcher current-workspace-only true'
+`gsettings set org.gnome.shell.app-switcher current-workspace-only true`
 
 
 ### Pinkish display problem after upgrading to Debian Testing with Nvidia
