@@ -131,6 +131,10 @@ to solve this we will copy the monitors.xml file to gdm configuration. <br/>
 <br>replace the <user> with your username.
 
 
+### Force GNOME to alt + tab only in current workspace
+`gsettings set org.gnome.shell.app-switcher current-workspace-only true'
+
+
 ## Pinkish display problem after upgrading to Debian Testing with Nvidia
 In some rare cases you would observed the monitor color to be pinkish after upgrading to testing
 the solution to this is 
