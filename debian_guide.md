@@ -125,10 +125,12 @@ deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free
 
 ## Pinkish display problem after upgrading to Debian Testing with Nvidia
 In some rare cases you would observed the monitor color to be pinkish after upgrading to testing
-the solution to this is open color settings and click on the the device to add profile
-select Colorspace: sRGB and set it as default
-After the color profile is added the colors should be normal, the profile would appear as 
-Standard Space - sRGB
+the solution to this is 
+- open color settings from gnome-settings
+- click on the the device to add profile
+- select `Colorspace: sRGB` and set it as default
+- After the color profile is added the colors should be normal, the profile would appear as 
+`Standard Space - sRGB`
 
 
 ## Install some necessary and cool fonts
