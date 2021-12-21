@@ -135,7 +135,7 @@ to solve this we will copy the monitors.xml file to gdm configuration. <br/>
 `gsettings set org.gnome.shell.app-switcher current-workspace-only true'
 
 
-## Pinkish display problem after upgrading to Debian Testing with Nvidia
+### Pinkish display problem after upgrading to Debian Testing with Nvidia
 In some rare cases you would observed the monitor color to be pinkish after upgrading to testing
 the solution to this is 
 - open color settings from gnome-settings
@@ -145,14 +145,14 @@ the solution to this is
 `Standard Space - sRGB`
 
 
-## Install some necessary and cool fonts
+### Install some necessary and cool fonts
 1) run `apt install fonts-indic fonts-cantarell fonts-comfortaa fonts-recommended`
 
-## Install some needed Python3 libraries
+### Install some needed Python3 libraries
 1) run `pip3 install requests bs4 selenium lxml openpyxl`
 
 
-## Important references:
+### Important references:
 1) How to add fonts manually?
 - Copy the font files to /usr/share/fonts</br>
 - run `fc-cache -f -v` to update fonts</br>
