@@ -106,7 +106,7 @@ deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free
  3) run `apt dist-upgrade` to upgrade your Debian to testing release.
 
 
-### Installing Nvida and other drivers and firmwares
+### Installing non-free firmwares and drivers
 1) add nomodeset to grub to avoid conflicts.
    goto grub file using
    `vim /etc/default/grub`
@@ -119,8 +119,8 @@ deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free
    run `update-grub`
 
 2) run `apt install linux-headers-amd64` to install linux kernel headers
-3) run `apt install nvidia-driver firmware-misc-nonfree` to install nvidia driver
-4) run `apt install firmware-realtek` to install realtek firmware for wifi, bluetooth, etc
+3) run `apt install nvidia-driver` to install nvidia driver
+4) run `apt install firmware-realtek firmware-misc-nonfree` to install realtek firmware for wifi, bluetooth, and other non free firmwares
 5) run `apt install printer-driver-all cups` to install printer drivers
 6) restart your system using `shutdown -r now`
 
