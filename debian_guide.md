@@ -10,6 +10,19 @@ Author: Shaikh Aquib
 to install Git, VIM, curl, zip, pip, JDK, GIMP, OBS-Studio
 
 
+### Add important binary paths to PATH environment variable
+1) open `vim ~/.bashrc`
+2) add this line to the end of file `export PATH=$PATH:/bin:/sbin`
+3) save the file and launch a new instance of terminal and do `su` to enter super user.
+
+
+### Add user to sudo
+1) enter super user using `su` command.
+2) `usermod -aG sudo <user>` <br/> where replace the <user> with the user you want to add to sudo
+   (example: `usermod -aG sudo aquib`)
+3) restart your computer for changes to take effect
+
+
 ### Add .vimrc
 1) open ~/.vimrc file (it will create one) using `vim ~/.vimrc`
 2) copy paste the below contents into file<br/>
@@ -47,18 +60,6 @@ set noswapfile
 set ai "Auto indent
 set si "Smart indent
 </pre>
-
-### Add user to sudo
-1) enter super user using `su` command.
-2) `usermod -aG sudo <user>` <br/> where replace the <user> with the user you want to add to sudo
-   (example: `usermod -aG sudo aquib`)
-3) restart your computer for changes to take effect
-
-
-### Add important binary paths to PATH environment variable
-1) open `vim ~/.bashrc`
-2) add this line to the end of file `export PATH=$PATH:/bin:/sbin`
-3) save the file and launch a new instance of terminal and do `su` to enter super user.
 
 
 ### Add non-free and (backports to the sources list or upgrade to Debian testing)
@@ -102,7 +103,7 @@ deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free
 </pre>
 2) update the repo and system using `apt update && apt upgrade`
 
-3) run `apt dist-upgrade` to upgrade your Debian to testing release.
+ 3) run `apt dist-upgrade` to upgrade your Debian to testing release.
 
 
 ### Installing Nvida and other drivers and firmwares
@@ -147,10 +148,10 @@ the solution to this is
 
 
 ### Install some necessary and cool fonts
-1) run `apt install fonts-indic fonts-cantarell fonts-comfortaa fonts-recommended`
+1) run `apt install fonts-indic fonts-cantarell fonts-comfortaa fonts-firacode fonts-recommended`
 
-### Install some needed Python3 libraries
-1) run `pip3 install requests bs4 selenium lxml openpyxl`
+### Install some useful Python3 libraries
+1) run `pip3 install pandas jupyter requests bs4 selenium lxml openpyxl`
 
 
 ### Important references:
