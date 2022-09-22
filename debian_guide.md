@@ -3,31 +3,39 @@
 Author: Shaikh Aquib
 
 
-### Installation of some must have packages
-1) There is no sudo privilege for user so enter super user using
-`su` command. It is recommended that you use `su` and enter the super user to do super user work instead of using sudo before every command that requires priviledge.
-2) `apt install git vim vim-gtk curl zip python3-pip default-jdk gimp obs-studio` <br/>
-to install Git, VIM, curl, zip, pip, JDK, GIMP, OBS-Studio
+### Installation of some must have tools and software
+Note: There is no sudo privilege for user, so we have to switch to superuser using
+`su` command. It is recommended that you use `su` and to enter the super user to do super user work instead of using sudo before every command that requires elevated privilege.
+```bash
+apt install -y git vim htop neofetch curl zip python3-pip default-jdk gimp obs-studio kamoso
+```
+to install Git, VIM, htop, neofetch, curl, zip, pip, JDK, GIMP, OBS-Studio
 
 
 ### Add important binary paths to PATH environment variable
 1) open `vim ~/.bashrc`
-2) add this line to the end of file `export PATH=$PATH:/bin:/sbin`
+2) add append below line to the end of file 
+```bash
+export PATH=$PATH:/bin:/sbin
+```
 3) save the file and launch a new instance of terminal and do `su` to enter super user.
 
 
 ### Add user to sudo
-1) enter super user using `su` command.
-2) `usermod -aG sudo <user>` <br/> where replace the <user> with the user you want to add to sudo
-   (example: `usermod -aG sudo aquib`)
-3) restart your computer for changes to take effect
+enter super user using `su` command.
+```bash
+usermod -aG sudo <user>
+```
+where replace the <user> with the user you want to add to sudo
+(example: `usermod -aG sudo aquib`),
+restart your computer for changes to take effect
 
 
 ### Add .vimrc
-1) open ~/.vimrc file (it will create one) using `vim ~/.vimrc`
-2) copy paste the below contents into file<br/>
+- open ~/.vimrc file (it will create one) using `vim ~/.vimrc`
+- copy paste the below contents into file<br/>
 
-<pre>
+```
 filetype plugin indent on
 syntax on
 
@@ -59,7 +67,7 @@ set noswapfile
 
 set ai "Auto indent
 set si "Smart indent
-</pre>
+```
 
 
 ### Add non-free and (backports to the sources list or upgrade to Debian testing)
@@ -72,7 +80,7 @@ NOTE: You don`t need to add backports if you are upgrading to Debian testing/sid
 
    The final sources.list would similar as below except for the codename bullseye (Debian 11)
    Note: ignore the last two lines if switching to Debian testing
-<pre>
+```
 deb http://deb.debian.org/debian/ bullseye main contrib non-free
 deb-src http://deb.debian.org/debian/ bullseye main contrib non-free
 
@@ -84,14 +92,14 @@ deb-src http://deb.debian.org/debian/ bullseye-updates main contrib non-free
 
 deb http://deb.debian.org/debian bullseye-backports main non-free
 deb-src http://deb.debian.org/debian/ bullseye-backports main non-free
-</pre>
+```
 4) run `apt update` to fetch the updates from sources.
 
 
 ### Switch to Debian testing/sid 
 1) Replace the code_name (example: bullseye) with testing in /etc/apt/sources.list
    Your /etc/apt/sources.list should look like below:
-<pre>
+```
 deb http://deb.debian.org/debian/ testing main contrib non-free
 deb-src http://deb.debian.org/debian/ testing main contrib non-free
 
@@ -100,10 +108,16 @@ deb-src http://security.debian.org/debian-security testing-security main contrib
 
 deb http://deb.debian.org/debian/ testing-updates main contrib non-free
 deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free
-</pre>
-2) update the repo and system using `apt update && apt upgrade`
+```
+Now,
+- update the repo
+- upgrade the system
+- upgrade to the testing distribution </br>
 
- 3) run `apt dist-upgrade` to upgrade your Debian to testing release.
+```bash
+apt update && apt upgrade && apt dist-upgrade && reboot
+```
+
 
 
 ### Installing non-free firmwares and drivers
@@ -118,23 +132,32 @@ deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free
    Now, save the file and quit the editor.
    run `update-grub`
 
-2) run `apt install linux-headers-amd64` to install linux kernel headers
-3) run `apt install nvidia-driver` to install nvidia driver
-4) run `apt install firmware-realtek firmware-misc-nonfree` to install realtek firmware for wifi, bluetooth, and other non free firmwares
-5) run `apt install printer-driver-all cups` to install printer drivers
-6) restart your system using `shutdown -r now`
+Now, To
+- Install linux kernel headers
+- Install nvidia driver
+- Install realtek firmware for wifi, bluetooth, and other non free firmwares
+- Install printer drivers
+- Reboot after installation is complete
 
+```bash
+apt install -y linux-headers-amd64 firmware-realtek firmware-misc-nonfree printer-driver-all cups nvidia-driver && reboot
+```
 
 ### Changing resolution
 Resolution can be changed through display settings in GNOME
 but after setting `nomodeset` the gdm login screen is of lower resolution
 to solve this we will copy the monitors.xml file to gdm configuration. <br/>
-`cp /home/<user>/.config/monitors.xml /var/lib/gdm3/.config/`
-<br>replace the <user> with your username.
+
+```bash
+cp /home/<user>/.config/monitors.xml /var/lib/gdm3/.config/
+```
+<br>replace the `<user>` with your username.
 
 
 ### Force GNOME to alt + tab only in current workspace
-`gsettings set org.gnome.shell.app-switcher current-workspace-only true`
+```bash
+gsettings set org.gnome.shell.app-switcher current-workspace-only true
+```
 
 
 ### Pinkish display problem after upgrading to Debian Testing with Nvidia
@@ -148,11 +171,14 @@ the solution to this is
 
 
 ### Install some necessary and cool fonts
-1) run `apt install fonts-indic fonts-cantarell fonts-comfortaa fonts-firacode fonts-recommended`
+```bash
+apt install -y fonts-indic fonts-cantarell fonts-comfortaa fonts-firacode fonts-recommended
+```
 
 ### Install some useful Python3 libraries
-1) run `pip3 install pandas jupyter requests bs4 selenium lxml openpyxl`
-
+```bash
+pip3 install pandas jupyter requests bs4 selenium lxml openpyxl
+```
 
 ### Important references:
 1) How to add fonts manually?
