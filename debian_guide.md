@@ -26,7 +26,7 @@ enter super user using `su` command.
 ```bash
 usermod -aG sudo <user>
 ```
-where replace the <user> with the user you want to add to sudo
+where replace the `<user>` with the user you want to add to sudo
 (example: `usermod -aG sudo aquib`),
 restart your computer for changes to take effect
 
